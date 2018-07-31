@@ -126,14 +126,7 @@ class FacebookPageBox
 	public function __toString() : string
 	{
 		ob_start();
-
-		try {
-			$this->render();
-		}
-		catch (FacebookPageBoxException $e) {
-			echo __CLASS__, ': ', $e->getMessage();
-		}
-
+		$this->render();
 		return ob_get_clean();
 	}
 
