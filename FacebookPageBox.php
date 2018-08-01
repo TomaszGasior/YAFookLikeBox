@@ -193,43 +193,41 @@ class FacebookPageBox
 (function(){
 	var container = document.querySelector('div.<?= $CSSClass ?>'),
 	    iframe    = container.querySelector('div.<?= $CSSClass ?> > iframe'),
-	    baseURL   = '<?= $widgetURL ?>';
+	    baseURL   = '<?= $widgetURL ?>',
+	    lastWidth = null,
+	    timeoutId = null;
 
-	var timeoutId, lastContainerWidth = 0, lastViewportWidth = 0;
-
-	function updateFBFrame()
+	function updateFacebookFrame()
 	{
-		containerWidth = container.clientWidth;
+		var width = container.clientWidth;
 
-		if (containerWidth < 180) {
-			containerWidth = 180;
-		}
-		else if (containerWidth > 500) {
-			containerWidth = 500;
+		if (lastWidth != null && Math.abs(width - lastWidth) < 10) {
+			return;
 		}
 
-		if (containerWidth != lastContainerWidth) {
-			iframe.style.width = containerWidth + 'px';
-			iframe.src = baseURL + '&width=' + containerWidth;
-
-			lastContainerWidth = containerWidth;
+		if (width < 180) {
+			width = 180;
 		}
+		else if (width > 500) {
+			width = 500;
+		}
+
+		iframe.style.width = width + 'px';
+		iframe.src = baseURL + '&width=' + width;
+
+		lastWidth = width;
 	}
 
-	setTimeout(function(){
-		updateFBFrame();
+	function setup()
+	{
+		updateFacebookFrame();
 
-		addEventListener('resize', function(){
-			var viewportWidth = document.documentElement.clientWidth;
-
-			if (Math.abs(viewportWidth - lastViewportWidth) > 35) {
-				clearTimeout(timeoutId);
-				timeoutId = setTimeout(updateFBFrame, 400);
-
-				lastViewportWidth = viewportWidth;
-			}
+		window.addEventListener('resize', function(){
+			clearTimeout(timeoutId);
+			timeoutId = setTimeout(updateFacebookFrame, 400);
 		});
-	}, <?= $loadingDelay ?>);
+	}
+	setTimeout(setup, <?= $loadingDelay ?>);
 })();
 </script>
 <?php
