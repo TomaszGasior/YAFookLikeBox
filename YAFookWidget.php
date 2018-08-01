@@ -6,9 +6,9 @@ class YAFookWidget extends \WP_Widget
 {
 	public function __construct()
 	{
-		parent::__construct('yafook_page_box', 'Fanpage on Facebook', [
-			'description' => 'Your fanpage\'s timeline, events list, messenger.',
-		]);
+		parent::__construct('yafook_page_box', 'Fanpage on Facebook',
+			['description' => 'Your fanpage\'s timeline, events list, messenger.']
+		);
 	}
 
 	private function _instance($instance)
@@ -38,7 +38,7 @@ class YAFookWidget extends \WP_Widget
 		echo $args['before_widget'];
 
 		if ($instance['title']) {
-			echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
+			echo $args['before_title'], apply_filters('widget_title', $instance['title']), $args['after_title'];
 		}
 
 		do_action('yafook_before_render');
@@ -80,17 +80,32 @@ class YAFookWidget extends \WP_Widget
 		try {
 			$FBPageBox = new FacebookPageBox;
 
+			$tabs = 0;
+			if ($instance['tabTimeline']) {
+				$tabs = $tabs | FacebookPageBox::TAB_TIMELINE;
+			}
+			if ($instance['tabEvents']) {
+				$tabs = $tabs | FacebookPageBox::TAB_EVENTS;
+			}
+			if ($instance['tabMessages']) {
+				$tabs = $tabs | FacebookPageBox::TAB_MESSAGES;
+			}
+			$FBPageBox->setShownTabs($tabs);
+
 			$FBPageBox->setFanpageURL($instance['fanpageURL']);
+			$FBPageBox->setHeight($instance['height']);
 			$FBPageBox->setShowCover($instance['showCover']);
 			$FBPageBox->setShowFriends($instance['showFriends']);
 			$FBPageBox->setShowCTA($instance['showCTA']);
 			$FBPageBox->setSmallHeader($instance['smallHeader']);
 
-			if ($instance['height']) {
-				$FBPageBox->setHeight($instance['height']);
-			}
 			if ($instance['loadingDelay']) {
 				$FBPageBox->setLoadingDelay($instance['loadingDelay']);
+			}
+
+			$CSSClass = (string)apply_filters('yafook_css_class', '');
+			if ($CSSClass) {
+				$FBPageBox->setCSSClass($CSSClass);
 			}
 
 			$FBPageBox->render();
