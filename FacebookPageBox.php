@@ -179,7 +179,7 @@ class FacebookPageBox
 		]);
 	}
 
-	private function _outputCode($variables)
+	private function _outputCode(array $variables) : void
 	{
 		extract($variables);
 
