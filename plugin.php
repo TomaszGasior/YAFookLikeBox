@@ -4,7 +4,7 @@ Plugin Name:  YAFookPageBox
 Domain Path:  /widget
 Plugin URI:   https://github.com/TomaszGasior/YAFookPageBox
 Description:  Yet Another FacebOOK Page Plugin for WordPress. Provides sidebars widget and standalone PHP class for developers.
-Version:      2018-07-31
+Version:      2018-08-02
 Author:       Tomasz Gąsior
 Author URI:   https://tomaszgasior.pl
 License:      MIT
