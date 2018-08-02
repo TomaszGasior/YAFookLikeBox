@@ -1,0 +1,74 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: YAFookPageBox 2018-07-31\n"
+"POT-Creation-Date: 2018-08-02 09:08:58+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+
+#: YAFookWidget.php:10
+msgid "Fanpage on Facebook"
+msgstr ""
+
+#: YAFookWidget.php:11
+msgid "Your fanpage's timeline, events list, messenger."
+msgstr ""
+
+#: YAFookWidget.php:82
+msgid "Fanpage address is not specified."
+msgstr ""
+
+#: YAFookWidget_form.php:9
+msgid "Title"
+msgstr ""
+
+#: YAFookWidget_form.php:16
+msgid "Fanpage address"
+msgstr ""
+
+#: YAFookWidget_form.php:22
+msgid "Box height (px)"
+msgstr ""
+
+#: YAFookWidget_form.php:28
+msgid "This value is ignored in preview mode."
+msgstr ""
+
+#: YAFookWidget_form.php:29
+msgid "Loading delay (ms)"
+msgstr ""
+
+#: YAFookWidget_form.php:38
+msgid "Timeline"
+msgstr ""
+
+#: YAFookWidget_form.php:43
+msgid "Events"
+msgstr ""
+
+#: YAFookWidget_form.php:48
+msgid "Messages"
+msgstr ""
+
+#: YAFookWidget_form.php:56
+msgid "Show cover photo in header"
+msgstr ""
+
+#: YAFookWidget_form.php:62
+msgid "Show friends who like it too"
+msgstr ""
+
+#: YAFookWidget_form.php:68
+msgid "Show call-to-action button"
+msgstr ""
+
+#: YAFookWidget_form.php:74
+msgid "Use smaller header"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Yet Another FacebOOK Page Plugin for WordPress. Provides sidebars widget and "
+"standalone PHP class for developers."
+msgstr ""
