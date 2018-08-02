@@ -27,7 +27,7 @@ class YAFookWidget extends \WP_Widget
 			'showCTA'      => true,
 			'smallHeader'  => true,
 
-			'loadingDelay' => null,
+			'loadingDelay' => 2000,
 		], $instance);
 	}
 
@@ -65,13 +65,13 @@ class YAFookWidget extends \WP_Widget
 			'tabMessages'  => isset($newInstance['tabMessages']),
 
 			'fanpageURL'   => sanitize_text_field($newInstance['fanpageURL']),
-			'height'       => $newInstance['height'] ? (int)($newInstance['height']) : false,
+			'height'       => (int)($newInstance['height']),
 			'showCover'    => isset($newInstance['showCover']),
 			'showFriends'  => isset($newInstance['showFriends']),
 			'showCTA'      => isset($newInstance['showCTA']),
 			'smallHeader'  => isset($newInstance['smallHeader']),
 
-			'loadingDelay' => $newInstance['loadingDelay'] ? (int)($newInstance['loadingDelay']) : false,
+			'loadingDelay' => (int)($newInstance['loadingDelay']),
 		];
 	}
 
@@ -104,8 +104,11 @@ class YAFookWidget extends \WP_Widget
 			$FBPageBox->setShowCTA($instance['showCTA']);
 			$FBPageBox->setSmallHeader($instance['smallHeader']);
 
-			if ($instance['loadingDelay']) {
+			if ($instance['loadingDelay'] !== false) {
 				$FBPageBox->setLoadingDelay($instance['loadingDelay']);
+			}
+			if (is_customize_preview()) {
+				$FBPageBox->setLoadingDelay(0);
 			}
 
 			$CSSClass = (string)apply_filters('yafook_css_class', '');
