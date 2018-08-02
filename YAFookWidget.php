@@ -6,8 +6,9 @@ class YAFookWidget extends \WP_Widget
 {
 	public function __construct()
 	{
-		parent::__construct('yafook_page_box', 'Fanpage on Facebook',
-			['description' => 'Your fanpage\'s timeline, events list, messenger.']
+		parent::__construct('yafook_page_box',
+			__('Fanpage on Facebook'),
+			['description' => __('Your fanpage\'s timeline, events list, messenger.')]
 		);
 	}
 
@@ -78,7 +79,7 @@ class YAFookWidget extends \WP_Widget
 	private function _render($instance)
 	{
 		if ($instance['fanpageURL'] == '') {
-			echo '<p>Fanpage address is not specified.</p>';
+			echo '<p>', __('Fanpage address is not specified.'), '</p>';
 			return;
 		}
 
