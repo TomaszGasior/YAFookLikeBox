@@ -77,6 +77,11 @@ class YAFookWidget extends \WP_Widget
 
 	private function _render($instance)
 	{
+		if ($instance['fanpageURL'] == '') {
+			echo '<p>Fanpage address is not specified.</p>';
+			return;
+		}
+
 		try {
 			$FBPageBox = new FacebookPageBox;
 
@@ -111,7 +116,7 @@ class YAFookWidget extends \WP_Widget
 			$FBPageBox->render();
 		}
 		catch (FacebookPageBoxException $e) {
-			echo 'Error: ', $e->getMessage();
+			echo '<p>Error: ', $e->getMessage(), '</p>';
 		}
 	}
 }
