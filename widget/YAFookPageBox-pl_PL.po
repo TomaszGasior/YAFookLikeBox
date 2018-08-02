@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: YAFookPageBox 2018-07-31\n"
+"POT-Creation-Date: 2018-08-02 09:08:58+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-08-02 11:47+0200\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.0.9\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"Language: pl_PL\n"
+
+#: YAFookWidget.php:10
+msgid "Fanpage on Facebook"
+msgstr "Fanpage na Facebooku"
+
+#: YAFookWidget.php:11
+msgid "Your fanpage's timeline, events list, messenger."
+msgstr "Oś czasu, wydarzenia i Messenger z&nbsp;fanpage'a na Facebooku."
+
+#: YAFookWidget.php:82
+msgid "Fanpage address is not specified."
+msgstr "Adres fanpage'a nie został określony."
+
+#: YAFookWidget_form.php:9
+msgid "Title"
+msgstr "Tytuł"
+
+#: YAFookWidget_form.php:16
+msgid "Fanpage address"
+msgstr "Adres fanpage'a"
+
+#: YAFookWidget_form.php:22
+msgid "Box height (px)"
+msgstr "Wysokość (px)"
+
+#: YAFookWidget_form.php:28
+msgid "This value is ignored in preview mode."
+msgstr "Ta wartość jest ignorowania w trybie podglądu."
+
+#: YAFookWidget_form.php:29
+msgid "Loading delay (ms)"
+msgstr "Opóźn. wczyt. (ms)"
+
+#: YAFookWidget_form.php:38
+msgid "Timeline"
+msgstr "Oś czasu"
+
+#: YAFookWidget_form.php:43
+msgid "Events"
+msgstr "Wydarzenia"
+
+#: YAFookWidget_form.php:48
+msgid "Messages"
+msgstr "Wiadomości"
+
+#: YAFookWidget_form.php:56
+msgid "Show cover photo in header"
+msgstr "Pokaż zdjęcie w tle w nagłówku"
+
+#: YAFookWidget_form.php:62
+msgid "Show friends who like it too"
+msgstr "Pokaż znajomych, którzy również lubią to"
+
+#: YAFookWidget_form.php:68
+msgid "Show call-to-action button"
+msgstr "Pokaż przycisk wezwania do akcji (CTA)"
+
+#: YAFookWidget_form.php:74
+msgid "Use smaller header"
+msgstr "Użyj mniejszego nagłówka"
+
+#. Description of the plugin/theme
+msgid ""
+"Yet Another FacebOOK Page Plugin for WordPress. Provides sidebars widget and "
+"standalone PHP class for developers."
+msgstr ""
+"Yet Another FacebOOK Page Plugin dla WordPressa. Dostarcza widget paska "
+"bocznego i samodzielną klasę PHP dla programistów."
