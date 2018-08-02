@@ -27,8 +27,7 @@ class FacebookPageBox
 
 	public function setFanpageURL(string $fanpageURL) : void
 	{
-		if (!filter_var($fanpageURL, FILTER_VALIDATE_URL)
-		    or !in_array(parse_url($fanpageURL, PHP_URL_HOST), ['facebook.com', 'www.facebook.com', 'web.facebook.com'])) {
+		if (!filter_var($fanpageURL, FILTER_VALIDATE_URL) or strpos($fanpageURL, 'facebook.com') === false) {
 			throw new FacebookPageBoxException("Fanpage URL \"$fanpageURL\" is invalid.");
 		}
 
@@ -117,7 +116,7 @@ class FacebookPageBox
 	public function setLoadingDelay(int $delayMS) : void
 	{
 		if ($delayMS < 0) {
-			throw new FacebookPageBoxException('Delay must be greater than 0 ms.');
+			throw new FacebookPageBoxException('Delay must be greater than or equal to 0 ms.');
 		}
 
 		$this->_loadingDelay = $delayMS;
