@@ -7,7 +7,7 @@ Description:  Yet Another FacebOOK Page Plugin for WordPress. Provides sidebars 
 Version:      2018-07-31
 Author:       Tomasz Gąsior
 Author URI:   https://tomaszgasior.pl
-License:      WTFPL
+License:      MIT
 */
 
 namespace YAFookPageBox;
